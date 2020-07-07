@@ -10,19 +10,19 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       isTfReady: false,
+      showOutput:'waiting for output'
     };
   }
 
   async componentDidMount() {
 
     await tf.ready()
-    this.setState({ isTfReady: true })
 
     // Get reference to bundled model assets
     const modelJson = require('./assets/helloworld/model.json');
     const modelWeights = require('./assets/helloworld/group1-shard1of1.bin');
 
-    console.log(modelWeights)
+    console.log(modelJson)
 
     const model = await tf.loadLayersModel(bundleResourceIO(modelJson, modelWeights));
     model.summary();
@@ -33,16 +33,15 @@ export default class App extends React.Component {
     console.log(prediction.dataSync())
 
     this.setState({
-      isTfReady:true
+      isTfReady:true,
+      showOutput:prediction.dataSync()
     })
-
   }
-
 
   render() {
     return(
       <View>
-      <Text>{this.state.isTfReady === true ? 'ready!' : 'loading'}</Text>
+      <Text>{JSON.stringify(this.state,null,2)}</Text>
       </View>
     )
   }

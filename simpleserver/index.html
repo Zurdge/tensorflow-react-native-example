@@ -14,6 +14,7 @@
       // var dataset = tf.tensor(example)
       const prediction = model.predict(dataset);
       console.log(prediction.dataSync()[0])
+      alert(prediction.dataSync()[0])
     }
     init();
     </script>
