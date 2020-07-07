@@ -5,7 +5,11 @@
     "ios": "react-native run-ios",
     "web": "expo start --web",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+
+    "exampleWEB":"node simpleserver/server.js",
+    "examplePYTHON":"python simplePythonModel/simpleModel.py",
+    "exampleREACTNATIVE":"npx react-native start"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.11.0",
