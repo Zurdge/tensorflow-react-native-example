@@ -1,0 +1,12 @@
+{
+  "name": "tfDemo",
+  "displayName": "tfDemo",
+  "expo": {
+    "name": "tfDemo",
+    "slug": "tfDemo",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}

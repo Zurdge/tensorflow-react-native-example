@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    const init = async()=>{
+      model = await tf.loadLayersModel('./helloworld/model.json');
+      console.log('model loaded')
+      var dataset = tf.tensor([10.0])
+      // var dataset = tf.tensor(example)
+      const prediction = model.predict(dataset);
+      console.log(prediction.dataSync()[0])
+    }
+    init();
+    </script>
+  </body>
+</html>
